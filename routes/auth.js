@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
   
       await newUser.save();
   
-      const url = `http://localhost:5173/activate/${activationToken}`;
+      const url = `https://demo-url-shortener-application.netlify.app/activate/${activationToken}`;
       transporter.sendMail({
         to: email,
         subject: 'Activate your account',
@@ -118,7 +118,7 @@ router.post('/forgot-password', async (req, res) => {
 
     await user.save();
 
-    const url = `http://localhost:5173/reset-password/${resetToken}`;
+    const url = `https://demo-url-shortener-application.netlify.app/reset-password/${resetToken}`;
     transporter.sendMail({
       to: email,
       subject: 'Reset your password',
